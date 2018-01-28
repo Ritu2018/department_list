@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "Gtek Technology";
+    src: url("GtekTechnology.woff") format("woff"),
+    url("GtekTechnology.woff2") format("woff2");
+}
+
+html, body {
+    position: relative;
+    height: 100%;
+    margin: 0;
+}
+.swiper-container{
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background: #eee;
+}
+.swiper-wrapper{
+    margin: 0;
+    padding: 0;
+    left: 0;
+    position: absolute;
+    -moz-transition: all 100ms ease-in-out;
+    -webkit-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
+}
+.swiper-slide{
+    float: left;
+    display: block;
+    width: 100vw;
+    text-align: center;
+}
+.dept{
+    max-width: 100%;
+    height: auto;
+}
+.pagenation{
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    text-align: center;
+}
+.pagenation div{
+    display: inline-block;
+    border: 1px solid lightgray;
+    background-color: lightgray;
+    padding: .8em 1em;
+    border-radius: 50%;
+    margin: 0.2em;
+}
+.active{
+    border: 1px solid cornflowerblue !important;
+    background-color: cornflowerblue !important;
+    box-shadow: 0 0 6px black;
+}
