@@ -67,15 +67,36 @@ function ontouch(el, callback){
     }
     $(".page").first().addClass(" active")
 }
-// pagenation();
+
 window.addEventListener('load', function(){
     var el = document.getElementById('swiper-container'); // reference gallery's main DIV container
     var gallerywidth = el.offsetWidth;
     var warpper = el.getElementsByClassName('swiper-wrapper')[0];
     var count = warpper.getElementsByClassName('swiper-slide').length, curindex = 0, ulLeft = 0;
+    var slides = document.getElementsByClassName("swiper-slide")
     warpper.style.width = gallerywidth * count + 'px'; // set width of gallery to parent container's width * total images
     pagenation();
-    // document.getElementsByClassName(".page")[0].addClass(" active");
+
+
+
+    // Temp ------ For providing background colors only
+    function color() {
+        random_color="#";
+        var letters = 'BCDEF'.split('');
+        for (var i = 0; i < 6; i++ ) {
+            random_color += letters[Math.floor(Math.random() * 5)];
+        }
+        return random_color
+    }
+    console.log($(slides[0])[0].style.backgroundColor = color());
+    console.log($(slides[1])[0].style.backgroundColor = color());
+    console.log($(slides[2])[0].style.backgroundColor = color());
+    console.log($(slides[3])[0].style.backgroundColor = color());
+    console.log($(slides[4])[0].style.backgroundColor = color());
+    console.log($(slides[5])[0].style.backgroundColor = color());
+
+    //------------
+
     ontouch(el, function(evt, dir, phase, swipetype, distance){
         if (phase === 'start'){ // on touchstart
             ulLeft = parseInt(warpper.style.left) || 0 // initialize ulLeft var with left position of UL
@@ -90,7 +111,6 @@ window.addEventListener('load', function(){
         }
     });// end ontouch
 
-    console.log("--");
     $(".page").click(function (e) {
         // $(this)[0].parent.children.removeClass(" .active");
         var i = this.classList[0];
