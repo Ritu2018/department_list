@@ -7,7 +7,7 @@ function ontouch(el, callback){
         startY,
         distX,
         distY,
-        threshold = 80, //required min distance traveled to be considered swipe
+        threshold = 40, //required min distance traveled to be considered swipe
         restraint = 100, // maximum distance allowed at the same time in perpendicular direction
         allowedTime = 500, // maximum time allowed to travel that distance
         elapsedTime,
@@ -76,7 +76,6 @@ window.addEventListener('load', function(){
     var slides = document.getElementsByClassName("swiper-slide")
     warpper.style.width = gallerywidth * count + 'px'; // set width of gallery to parent container's width * total images
     pagenation();
-
 
 
     // Temp ------ For providing background colors only
