@@ -80,12 +80,9 @@ window.addEventListener('load', function(){
 
     // Temp ------ For providing background colors only
     function color() {
-        random_color="#";
-        var letters = 'BCDEF'.split('');
-        for (var i = 0; i < 6; i++ ) {
-            random_color += letters[Math.floor(Math.random() * 5)];
-        }
-        return random_color
+        var colors = ["#b71c1c" , "#607d8b" , "#6a1b9a" , "#2b4d68",
+            "#2e7d32", "#9e9d24" , "#ef6c00" ];
+        return colors[Math.floor(Math.random()*7)];
     }
     console.log($(slides[0])[0].style.backgroundColor = color());
     console.log($(slides[1])[0].style.backgroundColor = color());
@@ -105,7 +102,10 @@ window.addEventListener('load', function(){
                 curindex = (swipetype === 'left')? Math.min(curindex+1, count-1) : Math.max(curindex-1, 0) // get new index of image to show
             }
             warpper.style.left = -curindex * gallerywidth + 'px'; // move UL to show the new image
-            cur_page(document.getElementsByClassName(curindex)[0]);
+            var elem = document.getElementsByClassName(curindex)[0];
+            // For pagenation
+            cur_page(elem);
+
             console.log(curindex);
         }
     });// end ontouch
@@ -124,3 +124,4 @@ window.addEventListener('load', function(){
     }
 }, false);
 
+// Development propose only

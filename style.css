@@ -1,3 +1,27 @@
+@font-face {
+    font-family: 'Maven Pro Light 300';
+    src: url('MavenProLight300-Regular.woff2') format('woff2'),
+    url('MavenProLight300-Regular.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Penna';
+    src: url('Penna.woff2') format('woff2'),
+    url('Penna.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Audrey';
+    src: url('Audrey-Bold.woff2') format('woff2'),
+    url('Audrey-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
 html, body {
     position: relative;
     height: 100%;
@@ -29,10 +53,17 @@ html, body {
 .dept{
     max-width: 100%;
     height: auto;
+    padding: 2em;
+    margin-top: 10%;
+}
+
+.dept .dept-name{
+    font-family: 'Audrey' , sans-serif;
+    font-size: 3em;
 }
 .pagenation{
     position: fixed;
-    bottom: 0;
+    top: 0;
     width: 100vw;
     text-align: center;
 }
@@ -49,6 +80,7 @@ html, body {
     background-color: cornflowerblue !important;
     box-shadow: 0 0 6px black;
 }
+
 @keyframes zoom-out {
     from{
         transform: scale(1);
